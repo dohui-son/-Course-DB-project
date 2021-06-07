@@ -7,7 +7,52 @@
 <?
     include "dbconn.php";
 ?>
-<style>
+<style type="text/css">
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{
+    font-size: 15px;
+    font-family: 'Nanum Gothic';
+}
+/* 
+.show_train{
+    font-size: 13px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+.show_train th{
+    padding: 3px;
+    background-color:  #f2f2f2;
+    border-bottom: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+}
+
+.show_train td{
+    text-align: center;
+    padding: 10px;
+    border-bottom: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+}
+
+.ktx{
+    text-decoration: underline;
+    background-color: #FFD4DF;
+    color: #FF5675;
+}
+
+.mugunghwa{
+    text-decoration: underline;
+    background-color: #FAFAAA;
+    color: #FFA500;
+}
+
+.saemaeul{
+    text-decoration: underline;
+    background-color: #D2FFD2;
+    color: #46B4B4;
+} */
 </style>
 
 <script type="text/javascript">
@@ -15,23 +60,24 @@
 </head>
 <body>
     <!-- for client to make appointment-->
-    <form action="appointment2.php" name="form" method="post" style="margin-top:10px;">
+    <form  action="appointment2.php" name="form" method="post" style="margin-top:10px;">
         <fieldset>
             <legend>미용실 예약</legend>
-            <table width="280" height="220">
-                <!-- name number -->
-				<tr>
-					<td><b>이름</b></td>
-					<td><input type="text" name="name"></td>
-				</tr>
-				<!-- telephone number -->
-				<tr>
-					<td><b>전화번호</b></td>
-					<td><input type="text" name="telephone_number"></td>
-				</tr>
+            <center>
+            <table width="430" height="480">
+                <tr> 
+                    <td><b>예약하실 회원 성함 </b></td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td><b>예약하실 회원 전화번호 </b></td>
+                    <td><input type="text" name="telephone_number"></td>
+                </tr>
+
                 <!-- submit button -->
-				<tr><td colspan="3"><center><img src="img/reg_bt2.png" width="200" height="50" onclick="document.form.submit();"></center></td></tr>
+                <tr><td colspan="2"><center><img src="img/confirm.png" width="200" height="50" onclick="document.form.submit();"></center></td></tr>
             </table>
+            </center>
         </fieldset>
     </form>
 </body>
