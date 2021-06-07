@@ -128,6 +128,14 @@ function register(){
 	window.open('register.php', '등록하기', "width=350,height=350,toolbar=no,location=yes,status=no,menubar=no, scrollbars=no,resizable=no,left=150,top=150");
 }
 
+//도희 
+function appointment(){
+	window.open('appointment.php','예약하기', "width=350,height=350,toolbar=no,location=yes,status=no,menubar=no, scrollbars=no,resizable=no,left=150,top=150" );
+}
+
+
+
+
 //client reservation search button event
 function ask(){
 	window.open('search.php', '조회', "width=500,height=540,toolbar=no,location=yes,status=no,menubar=no, scrollbars=yes,resizable=no,left=150,top=150");
@@ -145,7 +153,7 @@ function ask(){
 		<div style="padding-bottom: 5px;" >
 			<button style="border-width:0px; margin-right: 5px;" onClick="register()">회원 등록
 			</button>
-			<button style="border-width:0px; margin-right: 5px;" onClick="window.alert('현재 준비 중입니다.')">미용실 예약
+			<button style="border-width:0px; margin-right: 5px;" onClick="appointment()">미용실 예약
 			</button>
 			<button style="border-width:0px;" onClick="ask()">
 			예약 조회
