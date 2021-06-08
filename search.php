@@ -47,11 +47,11 @@ a:hover {
 			디자이너용 예약 검색
 			</button>		
 			<br>
-			<button style="margin-top:10px;" onClick="window.alert('현재 준비 중입니다.')">
+			<button style="margin-top:10px;" onClick="location.href='search_c.php'">
 			고객용 예약 검색
 			</button>
 			<br>
-			<button style="margin-top:10px;" onClick="window.alert('현재 준비 중입니다.')">
+			<button style="margin-top:10px;" onClick="location.href='search_date.php'">
 			날짜 별 예약 검색
 			</button>
 			</table>

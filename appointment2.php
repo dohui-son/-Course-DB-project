@@ -1,7 +1,7 @@
 <?
-
     $name = $_POST['name'];
     $date = $_POST['date'];
+    $time = $_POST['time'];
     $telephone_number = $_POST['telephone_number'];
     $did = $_POST['did'];
     $style_menu = $_POST['style_menu'];
@@ -42,24 +42,22 @@
         exit;
     }
     //check duplication
-    $sql0 = "select * from reservation where did='$did' and datetime='$date'";
+    $sql0 = "select * from reservation where did='$did' and datetime like '%$time'";
     $result0 = mysqli_query($connect,$sql0);
     $num0 = mysqli_num_rows($result0);
+
     
-
-    if($num0>0){
-        echo "<script>window.alert('디자이너의 해당 스케줄에 예약한 다른 손님이 있습니다.'); history.go(-1);</script>";
-        exit;
-    } 
-
-    //insert reservation
-	$sql7 = "select id from customer where name='$name' and telephone_number='$telephone_number'";
-    $cid_ = mysqli_query($connect,$sql7);
-    $row = mysqli_fetch_row($cid);
 	
 
-    $sql2 = "insert into reservation(cid, did, datetime,style_menu) values('$row', '$did', '$date','$style_menu')";
-    mysqli_query($connect,$sql2);
+    
+    $sql2 = "insert into reservation(cid, did, datetime,style_menu) values('$row[0]', '$did', '$date.$time','$style_menu')";
+    $result = mysqli_query($connect,$sql2);
+
+    if($result === false){
+        echo "<script>window.alert('예약이 제대로 이루어지지 않았습니다. 미용실에 문의해주세요.'); history.go(-1);</script>";
+    
+        exit;
+    }
 
     mysqli_close();
 

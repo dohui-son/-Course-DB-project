@@ -128,7 +128,7 @@ function register(){
 	window.open('register.php', '등록하기', "width=350,height=350,toolbar=no,location=yes,status=no,menubar=no, scrollbars=no,resizable=no,left=150,top=150");
 }
 
-//도희 
+//client make appointment button event
 function appointment(){
 	window.open('appointment.php','예약하기', "width=350,height=350,toolbar=no,location=yes,status=no,menubar=no, scrollbars=no,resizable=no,left=150,top=150" );
 }

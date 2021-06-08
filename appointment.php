@@ -13,46 +13,8 @@
 body{
     font-size: 15px;
     font-family: 'Nanum Gothic';
+ 
 }
-/* 
-.show_train{
-    font-size: 13px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000000;
-}
-
-.show_train th{
-    padding: 3px;
-    background-color:  #f2f2f2;
-    border-bottom: solid 1px #aaa;
-    border-right: solid 1px #aaa;
-}
-
-.show_train td{
-    text-align: center;
-    padding: 10px;
-    border-bottom: solid 1px #aaa;
-    border-right: solid 1px #aaa;
-}
-
-.ktx{
-    text-decoration: underline;
-    background-color: #FFD4DF;
-    color: #FF5675;
-}
-
-.mugunghwa{
-    text-decoration: underline;
-    background-color: #FAFAAA;
-    color: #FFA500;
-}
-
-.saemaeul{
-    text-decoration: underline;
-    background-color: #D2FFD2;
-    color: #46B4B4;
-} */
 </style>
 
 <script type="text/javascript">
@@ -64,7 +26,7 @@ body{
         <fieldset>
             <legend>미용실 예약</legend>
             <center>
-            <table width="500" height="700">
+            <table width="700" height="700">
                 <tr> 
                     <td><b>성함 </b></td>
                     <td><input type="text" name="name"></td>
@@ -76,6 +38,10 @@ body{
                 <tr>
 					<td><b>예약날짜</b></td>
 					<td><input type="date" name="date"></td>
+				</tr>
+                <tr>
+					<td><b>예약시간</b></td>
+					<td><input type="time" name="time"></td>
 				</tr>
                 <tr>
                     <td><b>예약하실 디자이너 </b></td>
