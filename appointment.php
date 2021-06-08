@@ -54,7 +54,7 @@ body{
                     <td><label><input type="checkbox" name="did" value="7"> 7 김은빈</label></td>
                 </tr>
                 <tr>
-                    <td><b>예약하실 디자이너 </b></td>
+                    <td><b>예약하실 헤어스타일 </b></td>
                     <td><label><input type="checkbox" name="style_menu" value="남성 컷"> 남성 컷</label></td>
                     <td><label><input type="checkbox" name="style_menu" value="여성 컷"> 여성 컷</label></td>
                     <td><label><input type="checkbox" name="style_menu" value="열펌"> 열펌</label></td>

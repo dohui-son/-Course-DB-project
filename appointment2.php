@@ -1,10 +1,10 @@
 <?
-    $name = $_POST['name'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $telephone_number = $_POST['telephone_number'];
-    $did = $_POST['did'];
-    $style_menu = $_POST['style_menu'];
+    $name = $_POST[name];
+    $date = $_POST[date];
+    $time = $_POST[time];
+    $telephone_number = $_POST[telephone_number];
+    $did = $_POST[did];
+    $style_menu = $_POST[style_menu];
 
     //check not empty
     if(!$name){
@@ -42,20 +42,26 @@
         exit;
     }
     //check duplication
-    $sql0 = "select * from reservation where did='$did' and datetime like '%$time'";
+    $sql0 = "select * from reservation where did='$did' and datetime = '$date.$time'";
     $result0 = mysqli_query($connect,$sql0);
     $num0 = mysqli_num_rows($result0);
+    if($num0>0){
+        echo "<script>window.alert('이미 디자이너의 해당 시간은 예약이 마감되었습니다. '); history.go(-1);</script>";
+        exit;
+    }
 
+    $sql7 = "select id from customer where name='$name' and telephone_number='$telephone_number'";
+    $cid_ = mysqli_query($connect,$sql7);
+    mysqli_data_seek($cid_, 0);
+    $row = mysqli_fetch_array($cid_);
     
 	
-
-    
     $sql2 = "insert into reservation(cid, did, datetime,style_menu) values('$row[0]', '$did', '$date.$time','$style_menu')";
-    $result = mysqli_query($connect,$sql2);
+    $result2 = mysqli_query($connect,$sql2);
+   
 
-    if($result === false){
+    if($result2 === false){
         echo "<script>window.alert('예약이 제대로 이루어지지 않았습니다. 미용실에 문의해주세요.'); history.go(-1);</script>";
-    
         exit;
     }
 
@@ -63,5 +69,5 @@
 
 	
 
-    echo "<script>alert('$name님 예약이 완료되었습니다.'); window.close();</script>";
+    echo "<script>alert('$name 님 예약이 완료되었습니다.'); window.close();</script>";
 ?>

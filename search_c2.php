@@ -34,7 +34,7 @@ body{
     $cid = mysqli_fetch_row($result0);
 
     //get reservation information
-    $sql1 = "select datetime,style_menu from reservation where cid='$cid[0]' and datetime like '$date%'  order by datetime";
+    $sql1 = "select D.name as DESIGNER, datetime as DATETIME ,style_menu as STYLE from reservation, designer D where cid='$cid[0]' and datetime like '$date%' and did=D.id  order by datetime";
     $result1 = mysqli_query($connect, $sql1);
     $num1 = mysqli_num_rows($result1);
    

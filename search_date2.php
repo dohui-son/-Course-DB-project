@@ -24,10 +24,13 @@ body{
 
 
     //get reservation information
-    $sql1 = "select did as designer,datetime,style_menu as style from reservation where datetime like '$date%'  order by datetime";
+    $sql1 = "select D.name as DESIGNER,C.name as CLIENT ,datetime as DATE_TIME,style_menu as STYLE from reservation, designer D, customer C where datetime like '$date%' and cid=C.id and did=D.id  order by datetime";
     $result1 = mysqli_query($connect, $sql1);
     $num1 = mysqli_num_rows($result1);
    
+
+   
+
 
 
     if($num1==0){
